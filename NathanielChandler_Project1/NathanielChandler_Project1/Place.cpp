@@ -33,6 +33,26 @@ void Place::setWest(Place * x)
 	west = x;
 }
 
+Place Place::getNorth()
+{
+	return *north;
+}
+
+Place Place::getSouth()
+{
+	return *south;
+}
+
+Place Place::getEast()
+{
+	return *east;
+}
+
+Place Place::getWest()
+{
+	return *west;
+}
+
 Merchant Place::GetMerchant()
 {
 	return merchant;

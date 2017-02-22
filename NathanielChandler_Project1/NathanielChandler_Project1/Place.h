@@ -18,6 +18,10 @@ public:
 	void setSouth(Place * x);
 	void setEast(Place * x);
 	void setWest(Place * x);
+	Place getNorth();
+	Place getSouth();
+	Place getEast();
+	Place getWest();
 	Merchant GetMerchant();
 	~Place();
 };
