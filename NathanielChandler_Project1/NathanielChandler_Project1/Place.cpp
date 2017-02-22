@@ -13,6 +13,26 @@ void Place::SetPlace(int lvl,int rand1, int rand2)
 
 }
 
+void Place::setNorth(Place * x)
+{
+	north = x;
+}
+
+void Place::setSouth(Place * x)
+{
+	south = x;
+}
+
+void Place::setEast(Place * x)
+{
+	east = x;
+}
+
+void Place::setWest(Place * x)
+{
+	west = x;
+}
+
 Merchant Place::GetMerchant()
 {
 	return merchant;
