@@ -11,6 +11,7 @@ private:
 	Place *south;
 	Place *east;
 	Place *west;
+	void SetName(int, int);
 public:
 	Place();
 	void SetPlace(int, int, int);
