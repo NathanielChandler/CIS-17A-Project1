@@ -31,7 +31,8 @@ Map::Map(int size)
 	{
 		map.push_back(Place());
 	}
-
+	start =map[(mapSize * (mapSize / 2)) + (mapSize / 2 + 1)];
+	current = start;
 }
 
 int Map::getSize()

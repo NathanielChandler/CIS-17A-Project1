@@ -1,7 +1,7 @@
 #include "Merchant.h"
 
 
-void Merchant::RandomizeStock(int lvl,int rand1)
+void Merchant::SetStock(int lvl,int rand1)
 {
 	int value = rand1 % 3;
 	switch (value)
@@ -16,15 +16,17 @@ void Merchant::RandomizeStock(int lvl,int rand1)
 		upAtk = lvl / 2 + 1;
 		upDef = lvl / 2 + 1;
 		break;
-	default:
-		cout << "Error - Stock not set" << endl;
 	}
 	coinCost = (lvl / 2 + 1) * 2 + 10;
 }
 
-string Merchant::RandomizeName(int, int)
+void Merchant::SetName(int rand1, int rand2)
 {
-	return string();
+	string part1[] = { "Zig ","Berben ","Gunter " };
+	string part2[] = { "Floyd", "Zoeyd","Stanzen" };
+
+	name += part1[rand1 % 3];
+	name += part2[rand2 % 3];
 }
 
 Merchant::Merchant()
@@ -36,7 +38,8 @@ Merchant::Merchant()
 
 Merchant::Merchant(int lvl,int rand1,int rand2)
 {
-
+	SetName(rand1, rand2);
+	SetStock(lvl, rand1);
 }
 
 string Merchant::GetName()
