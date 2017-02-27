@@ -42,6 +42,16 @@ Merchant::Merchant(int lvl,int rand1,int rand2)
 	SetStock(lvl, rand1);
 }
 
+string Merchant::GetStock()
+{
+	return string();
+}
+
+void Merchant::Purchase(Player *p, char select)
+{
+
+}
+
 string Merchant::GetName()
 {
 	return name;

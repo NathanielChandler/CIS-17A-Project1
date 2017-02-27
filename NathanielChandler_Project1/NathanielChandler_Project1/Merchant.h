@@ -1,4 +1,5 @@
 #pragma once
+#include "Player.h"
 #include <string>
 using namespace std;
 class Merchant
@@ -13,6 +14,8 @@ private:
 public:
 	Merchant();
 	Merchant(int, int, int);
+	string GetStock();
+	void Purchase(Player *,char);
 	string GetName();
 	~Merchant();
 };
