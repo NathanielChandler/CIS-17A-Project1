@@ -44,7 +44,17 @@ Merchant::Merchant(int lvl,int rand1,int rand2)
 
 string Merchant::GetStock()
 {
-	return string();
+	string stock = "They are selling:\n";
+	if (upAtk != 0)
+	{
+		stock += "  >Attack Buff of " + to_string(upAtk) + "\n";
+	}
+	if (upDef != 0)
+	{
+		stock += "  >Defense Buff of " + to_string(upDef) + "\n";
+	}
+	stock += "\nfor " + to_string(coinCost) + " coin(s)\n";
+	return stock;
 }
 
 void Merchant::Purchase(Player *p, char select)
