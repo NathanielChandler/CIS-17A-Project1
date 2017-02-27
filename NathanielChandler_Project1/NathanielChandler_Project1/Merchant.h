@@ -15,7 +15,7 @@ public:
 	Merchant();
 	Merchant(int, int, int);
 	string GetStock();
-	void Purchase(Player *,char);
+	bool Purchase(Player &,char);
 	string GetName();
 	~Merchant();
 };

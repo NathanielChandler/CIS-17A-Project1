@@ -57,9 +57,30 @@ string Merchant::GetStock()
 	return stock;
 }
 
-void Merchant::Purchase(Player *p, char select)
+bool Merchant::Purchase(Player &p, char select)
 {
+	if (p.GetCoin() < coinCost)
+	{
+		return false;
+	}
+	else
+	{
+		switch (select)
+		{
+		case 'a':
+			p.SetCoin(p.GetCoin() - coinCost);
+			p.AddAtk(upAtk);
+			upAtk = 0;
+			break;
+		case 'd':
+			p.SetCoin(p.GetCoin() - coinCost);
+			p.AddDef(upDef);
+			upDef = 0;
+			break;
+		}
 
+		return true;
+	}
 }
 
 string Merchant::GetName()
