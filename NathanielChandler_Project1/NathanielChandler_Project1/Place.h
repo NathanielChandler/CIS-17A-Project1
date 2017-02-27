@@ -12,6 +12,7 @@ private:
 public:
 	Place();
 	void SetPlace(int, int, int);
+	string GetName();
 	Merchant GetMerchant();
 	bool GetisSet();
 	~Place();

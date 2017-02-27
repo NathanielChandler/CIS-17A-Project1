@@ -21,6 +21,11 @@ void Place::SetPlace(int lvl,int rand1, int rand2)
 	isSet = true;
 }
 
+string Place::GetName()
+{
+	return name;
+}
+
 Merchant Place::GetMerchant()
 {
 	return merchant;
