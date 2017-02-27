@@ -34,7 +34,7 @@ void Player::AddLvl(int x)
 
 void Player::SetCoin(int x)
 {
-	coin = x
+	coin = x;
 }
 
 int Player::GetAtk()
