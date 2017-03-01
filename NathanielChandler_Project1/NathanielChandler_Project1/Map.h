@@ -15,7 +15,7 @@ public:
 	Map(int);
 	int getSize();
 	Place getCurrent();
-	bool goDirection(char);
+	bool goDirection(char, int);
 	~Map();
 };
 

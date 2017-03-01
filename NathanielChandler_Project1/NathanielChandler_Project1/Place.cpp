@@ -11,6 +11,7 @@ void Place::SetName(int rand1, int rand2)
 
 Place::Place()
 {
+	isSet = false;
 }
 
 void Place::SetPlace(int lvl,int rand1, int rand2)

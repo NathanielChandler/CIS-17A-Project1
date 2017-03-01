@@ -31,8 +31,9 @@ Map::Map(int size)
 	{
 		map.push_back(Place());
 	}
-	start =map[(mapSize * (mapSize / 2)) + (mapSize / 2 + 1)];
+	start = map[(mapSize * (mapSize / 2)) + (mapSize / 2 + 1)];
 	current = start;
+	setCurrent(1);
 }
 
 int Map::getSize()
@@ -45,7 +46,7 @@ Place Map::getCurrent()
 	return current;
 }
 
-bool Map::goDirection(char d)
+bool Map::goDirection(char d, int lvl)
 {
 	switch (d) {
 	case 'n':
@@ -57,6 +58,7 @@ bool Map::goDirection(char d)
 		{
 			currentLocation -= mapSize;
 			current = map[currentLocation];
+			setCurrent(lvl);
 			return true;
 		}
 	case 's':
@@ -68,6 +70,7 @@ bool Map::goDirection(char d)
 		{
 			currentLocation += mapSize;
 			current = map[currentLocation];
+			setCurrent(lvl);
 			return true;
 		}
 	case 'e':
@@ -79,6 +82,7 @@ bool Map::goDirection(char d)
 		{
 			currentLocation++;
 			current = map[currentLocation];
+			setCurrent(lvl);
 			return true;
 		}
 	case 'w':
@@ -90,11 +94,13 @@ bool Map::goDirection(char d)
 		{
 			currentLocation--;
 			current = map[currentLocation];
+			setCurrent(lvl);
 			return true;
 		}
 
 			
 	}
+	return false;
 }
 
 
