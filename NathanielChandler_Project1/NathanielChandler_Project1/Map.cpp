@@ -12,6 +12,7 @@ void Map::setCurrent(int lvl)
 		int rand2 = rand() % 776;
 
 		current.SetPlace(lvl, rand1, rand2);
+		map[currentLocation] = current;
 	}
 }
 
