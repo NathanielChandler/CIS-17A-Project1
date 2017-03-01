@@ -16,10 +16,11 @@ Place::Place()
 
 void Place::SetPlace(int lvl,int rand1, int rand2)
 {
+	isSet = true;
 	SetName(rand1, rand2);
 	merchant = Merchant(lvl,rand1, rand2);
 	hasMerchant = true;
-	isSet = true;
+	
 }
 
 string Place::GetName()
