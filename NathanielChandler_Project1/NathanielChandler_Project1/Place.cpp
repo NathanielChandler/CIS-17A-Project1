@@ -2,10 +2,10 @@
 
 void Place::SetName(int rand1, int rand2)
 {
-	string part1[]= { "Yarb","Bergen","Hallow" };
+	string part1[]= { "Yarb","Bergen","Hallow","Wicker","Stanzen" };
 	string part2[] = { "berg", "werth","stanz" };
 
-	name += part1[rand1 % 3];
+	name += part1[rand1 % 5];
 	name += part2[rand2 % 3];
 }
 
