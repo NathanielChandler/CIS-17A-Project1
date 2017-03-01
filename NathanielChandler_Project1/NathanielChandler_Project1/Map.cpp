@@ -53,26 +53,47 @@ bool Map::goDirection(char d)
 		{
 			return false;
 		}
+		else
+		{
+			currentLocation -= mapSize;
+			current = map[currentLocation];
+			return true;
+		}
 	case 's':
 		if (currentLocation > mapSize * (mapSize - 1))
 		{
 			return false;
+		}
+		else
+		{
+			currentLocation += mapSize;
+			current = map[currentLocation];
+			return true;
 		}
 	case 'e':
 		if ((currentLocation + 1) % mapSize == 0)
 		{
 			return false;
 		}
+		else
+		{
+			currentLocation++;
+			current = map[currentLocation];
+			return true;
+		}
 	case 'w':
 		if ((currentLocation - 1) % mapSize == mapSize - 1)
 		{
 			return false;
 		}
-	default:
-			currentLocation -= mapSize;
+		else
+		{
+			currentLocation--;
 			current = map[currentLocation];
 			return true;
-	
+		}
+
+			
 	}
 }
 
