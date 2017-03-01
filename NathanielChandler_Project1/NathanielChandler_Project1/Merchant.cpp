@@ -4,20 +4,18 @@
 void Merchant::SetStock(int lvl,int rand1)
 {
 	int value = rand1 % 3;
+	upAtk = lvl / 2 + 1 + (rand1 % lvl);
+	upDef = lvl / 2 + 1 + (rand1 % lvl);
 	switch (value)
 	{
 	case 0:
-		upAtk = lvl / 2 + 1;
+		upAtk = 0;
 		break;
 	case 1:
-		upDef = lvl / 2 + 1;
-		break;
-	case 2:
-		upAtk = lvl / 2 + 1;
-		upDef = lvl / 2 + 1;
+		upDef = 0;
 		break;
 	}
-	coinCost = (lvl / 2 + 1) * 2 + 10;
+	coinCost = (lvl / 2 + 1) * 2 + rand1 % (lvl * 10);
 }
 
 void Merchant::SetName(int rand1, int rand2)
