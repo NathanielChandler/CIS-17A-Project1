@@ -66,11 +66,19 @@ bool Merchant::Purchase(Player &p, char select)
 		switch (select)
 		{
 		case 'a':
+			if (upAtk == 0)
+			{
+				return false;
+			}
 			p.SetCoin(p.GetCoin() - coinCost);
 			p.AddAtk(upAtk);
 			upAtk = 0;
 			break;
 		case 'd':
+			if (upDef == 0)
+			{
+				return false;
+			}
 			p.SetCoin(p.GetCoin() - coinCost);
 			p.AddDef(upDef);
 			upDef = 0;
