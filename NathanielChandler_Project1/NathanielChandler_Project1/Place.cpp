@@ -33,6 +33,7 @@ Merchant Place::GetMerchant()
 	return merchant;
 }
 
+
 bool Place::GetisSet()
 {
 	return isSet;
