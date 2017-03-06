@@ -23,9 +23,10 @@ void Place::SetPlace(int lvl,int rand1, int rand2)
 	
 }
 
-bool Place::Purchase(Player &p, char select)
+bool Place::Purchase(Player &p, char select, Merchant &m)
 {
-	if (p.GetCoin() < merchant.GetCoinCost())
+
+	if (p.GetCoin() < m.GetCoinCost())
 	{
 		return false;
 	}
@@ -34,22 +35,22 @@ bool Place::Purchase(Player &p, char select)
 		switch (select)
 		{
 		case 'a':
-			if (upAtk == 0)
+			if (m.GetUpAtk() == 0)
 			{
 				return false;
 			}
-			p.SetCoin(p.GetCoin() - coinCost);
-			p.AddAtk(upAtk);
-			upAtk = 0;
+			p.SetCoin(p.GetCoin() - m.GetCoinCost());
+			p.AddAtk(m.GetUpAtk());
+			m.UpdateStock(0, m.GetUpDef());
 			break;
 		case 'd':
-			if (upDef == 0)
+			if (m.GetUpDef() == 0)
 			{
 				return false;
 			}
-			p.SetCoin(p.GetCoin() - coinCost);
-			p.AddDef(upDef);
-			upDef = 0;
+			p.SetCoin(p.GetCoin() - m.GetCoinCost());
+			p.AddDef(m.GetUpDef());
+			m.UpdateStock(merchant.GetUpAtk(),0);
 			break;
 		}
 

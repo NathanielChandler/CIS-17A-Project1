@@ -23,7 +23,7 @@ int main()
 		cin >> temp;
 		if (temp == 'a' || temp == 'd')
 		{
-			if (map1.getCurrent().GetMerchant().Purchase(player, temp))
+			if (map1.getCurrent().Purchase(player, temp,map1.getCurrent().GetMerchant()))
 			{
 				cout << "Purchase Successful" << endl;
 			}

@@ -77,6 +77,12 @@ string Merchant::GetName()
 	return name;
 }
 
+void Merchant::UpdateStock(int TempAtk, int TempDef)
+{
+	upAtk = TempAtk;
+	upDef = TempDef;
+}
+
 Merchant::~Merchant()
 {
 }

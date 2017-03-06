@@ -19,6 +19,7 @@ public:
 	int GetCoinCost();
 	string GetStock();
 	string GetName();
+	void UpdateStock(int, int);
 	~Merchant();
 };
 
