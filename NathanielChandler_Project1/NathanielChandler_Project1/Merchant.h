@@ -14,8 +14,10 @@ private:
 public:
 	Merchant();
 	Merchant(int, int, int);
+	int GetUpAtk();
+	int GetUpDef();
+	int GetCoinCost();
 	string GetStock();
-	bool Purchase(Player &,char);
 	string GetName();
 	~Merchant();
 };

@@ -12,6 +12,7 @@ private:
 public:
 	Place();
 	void SetPlace(int, int, int);
+	bool Purchase(Player&,char,Merchant &);
 	string GetName();
 	Merchant GetMerchant();
 	bool GetisSet();

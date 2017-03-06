@@ -40,6 +40,21 @@ Merchant::Merchant(int lvl,int rand1,int rand2)
 	SetStock(lvl, rand1);
 }
 
+int Merchant::GetUpAtk()
+{
+	return upAtk;
+}
+
+int Merchant::GetUpDef()
+{
+	return upDef;
+}
+
+int Merchant::GetCoinCost()
+{
+	return coinCost;
+}
+
 string Merchant::GetStock()
 {
 	string stock = "They are selling:\n";
@@ -55,39 +70,7 @@ string Merchant::GetStock()
 	return stock;
 }
 
-bool Merchant::Purchase(Player &p, char select)
-{
-	if (p.GetCoin() < coinCost)
-	{
-		return false;
-	}
-	else
-	{
-		switch (select)
-		{
-		case 'a':
-			if (upAtk == 0)
-			{
-				return false;
-			}
-			p.SetCoin(p.GetCoin() - coinCost);
-			p.AddAtk(upAtk);
-			upAtk = 0;
-			break;
-		case 'd':
-			if (upDef == 0)
-			{
-				return false;
-			}
-			p.SetCoin(p.GetCoin() - coinCost);
-			p.AddDef(upDef);
-			upDef = 0;
-			break;
-		}
 
-		return true;
-	}
-}
 
 string Merchant::GetName()
 {
